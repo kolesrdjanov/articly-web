@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" redirect='/categories' element={<Layout />}>
           <Route path="categories" element={<Categories />} />
           <Route path="articles" element={<Articles />} />
           <Route path="articles/new" element={<ArticleDetails />} />
@@ -21,7 +21,7 @@ export default function App() {
 
 function Layout() {
   return (
-    <div className="h-full flex flex-row">
+    <div className="min-h-screen  flex flex-row">
       <nav className="navigation py-10">
         <ul className="flex flex-col">
           <li>
@@ -33,7 +33,7 @@ function Layout() {
         </ul>
       </nav>
 
-      <div className="p-10">
+      <div className="p-10 w-full">
         <Outlet />
       </div>
     </div>
@@ -45,7 +45,7 @@ function NoMatch() {
     <div>
       <h2>Nothing to see here!</h2>
       <p>
-        <Link to="/categories">Go to the home page</Link>
+        <NavLink to="/categories">Go to the home page</NavLink>
       </p>
     </div>
   );

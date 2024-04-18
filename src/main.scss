@@ -4,11 +4,15 @@ body {
   font-family: $font--main;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 html,
 body > div,
 body > div > div {
-  height: 100%;
+  min-height: 100%;
 }
 
 .container {
@@ -66,8 +70,10 @@ nav.navigation {
   font-size: 24px;
 }
 
+textarea,
 input,
 select {
+  resize: none;
   padding: 6px;
   font-size: 14px;
   border: 1px solid $color--dark;
