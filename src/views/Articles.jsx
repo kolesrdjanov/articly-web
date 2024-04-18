@@ -18,7 +18,7 @@ const Articles = () => {
   async function removeArticle (id) {
     try {
       await api.delete(`/article/${id}`)
-      fetchArticles()
+      setArticles(articles.filter(article => article.id !== id))
     } catch (error) {
       console.error(error)
     }

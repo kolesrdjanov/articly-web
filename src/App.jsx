@@ -2,6 +2,7 @@ import { Routes, Route, Outlet, NavLink } from "react-router-dom"
 import Categories from "./views/Categories.jsx"
 import Articles from "./views/Articles.jsx"
 import ArticleDetails from "./views/ArticleDetails.jsx"
+import CategoryDetails from './views/CategoryDetails.jsx'
 
 export default function App() {
   return (
@@ -9,6 +10,8 @@ export default function App() {
       <Routes>
         <Route path="/" redirect='/categories' element={<Layout />}>
           <Route path="categories" element={<Categories />} />
+          <Route path="categories/new" element={<CategoryDetails />} />
+          <Route path="categories/:id" element={<CategoryDetails />} />
           <Route path="articles" element={<Articles />} />
           <Route path="articles/new" element={<ArticleDetails />} />
           <Route path="articles/:id" element={<ArticleDetails />} />
