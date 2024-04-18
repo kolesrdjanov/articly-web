@@ -53,7 +53,7 @@ const CategoryDetails = () => {
       </div>
       
       <div className='grid grid-cols-12 w-full'>
-        <div className='col-span-6'>
+        <div className='col-span-4 form'>
           <div className='mb-4'>
             <label className='mb-1 block w-full text-sm'>Name</label>
             <input
@@ -64,8 +64,8 @@ const CategoryDetails = () => {
             />
           </div>
 
-          <div className='flex items-center gap-4'>
-            <button className='ml-auto' onClick={() => saveCategory()}>{id ? 'Update Category' : 'Save Category'}</button>
+          <div className='flex items-center justify-center gap-4'>
+            <button onClick={() => saveCategory()}>{id ? 'Update Category' : 'Save Category'}</button>
           </div>
         </div>
       </div>

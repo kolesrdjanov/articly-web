@@ -56,7 +56,7 @@ const Categories = () => {
             <tr key={category.id}>
               <td>{category.id}</td>
               <td>{category.name}</td>
-              <td>
+              <td className='actions'>
                 <span onClick={() => goToDetails(category.id)} className='underline cursor-pointer mr-2'>Edit</span>
                 <span onClick={() => removeCategory(category.id)} className='text-red underline cursor-pointer'>Delete</span>
               </td>

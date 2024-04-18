@@ -38,15 +38,18 @@ const ArticleDetails = () => {
 
   const saveArticle = async () => {
     try {
+      const payload = {...article}
+      payload.content = JSON.stringify(article.content)
+
       if (id) {
-        await api.put(`/article/${id}`, article)
+        await api.put(`/article/${id}`, payload)
       } else {
-        await api.post(`/article`, article)
+        await api.post(`/article`, payload)
       }
 
       navigate('/articles')
     } catch (error) {
-      console.error(error)
+      alert(error.response.data.message)
     }
   }
 
